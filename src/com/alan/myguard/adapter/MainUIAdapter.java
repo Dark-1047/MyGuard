@@ -10,6 +10,11 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+/**
+ * 主页面图片自定义
+ * @author alan
+ *
+ */
 public class MainUIAdapter extends BaseAdapter
 {
         private static final String[] NAMES = new String[] {"手机防盗", "通讯卫士", "软件管理", "流量管理", "任务管理", "手机杀毒", 
