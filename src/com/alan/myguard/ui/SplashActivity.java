@@ -83,6 +83,7 @@ public class SplashActivity extends Activity
 	
 	private void showUpdateDialog(){
 		Log.v("updateDialog", "更新面板");
+		//创建一个AlertDialog
 		AlertDialog.Builder builder=new AlertDialog.Builder(this);
 		builder.setIcon(android.R.drawable.ic_dialog_info);
 		builder.setTitle("升级提醒");
@@ -92,18 +93,19 @@ public class SplashActivity extends Activity
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				if(Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)){
-					File dir=new File(Environment.getExternalStorageDirectory(),"/mygurad/update");
+					File dir=new File(Environment.getExternalStorageDirectory(),"/MyGurad/update");
 					if(!dir.exists()){
 						dir.mkdirs();
 					}
-					String apkPath=Environment.getExternalStorageDirectory()+"/myguard/update/new.apk";
+					String apkPath=Environment.getExternalStorageDirectory()+"/MyGuard/MyGuard.apk";
 					
 				}
 			}
 		});
 		
 		builder.setNegativeButton("取消",new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int which) {				
+			public void onClick(DialogInterface dialog, int which) {	
+				loadMainUI();
 			}
 		});
 		builder.create().show();
@@ -116,11 +118,8 @@ public class SplashActivity extends Activity
 			info=updateInfoService.getUpdateInfo(R.string.serverUrl);
 			String v=info.getVersion();
 			if(v.equals(version)){
-				Log.i(TAG,"当前版本"+version);
-				Log.i(TAG, "最新版本"+v);
 				return false;
 			}else{
-				Log.i(TAG,"需要更新");
 				return true;
 			}
 		} catch (Exception e) {
@@ -149,6 +148,7 @@ public class SplashActivity extends Activity
 	
 	// 跳转到主页面
 	private void loadMainUI(){
+		
 		Intent intent=new Intent(this,MainActivity.class); 
 		startActivity(intent);
 		finish();
@@ -182,7 +182,7 @@ public class SplashActivity extends Activity
 				Toast.makeText(SplashActivity.this,"更新失败",Toast.LENGTH_SHORT).show();
 				loadMainUI();
 			} catch (Exception e) {
-				e.printStackTrace();
+
 			}
 			
 		}
