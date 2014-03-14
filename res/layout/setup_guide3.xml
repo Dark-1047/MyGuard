@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/title_background"
+    android:orientation="vertical" >
+    
+   <TextView 
+        style="@style/titles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="手机卡绑定"/>
+    
+    <TextView 
+        style="@style/titles"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/white"
+        android:text="" />
+    
+    <TextView 
+        style="@style/titles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="如果sim卡更换后，短信会发送到该号码上"/>
+    
+    <EditText
+        android:id="@+id/et_guide_phoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="请输入或选择一个联系人"
+        android:textSize="24sp" />
+     <Button
+        android:id="@+id/bt_guide_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="选择联系人联系人"
+        android:textColor="@android:color/black" />
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dip"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+        
+        <ImageView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/presence_invisible"
+            android:contentDescription="@string/hello_world"/>
+        
+        <ImageView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/presence_invisible"
+            android:contentDescription="@string/hello_world"/>
+        
+        <ImageView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/presence_online"
+            android:contentDescription="@string/hello_world"/>
+        
+        <ImageView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/presence_invisible"
+            android:contentDescription="@string/hello_world"/>
+        
+    </LinearLayout>
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal|center_vertical">
+        
+        <LinearLayout 
+            android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20sp"
+                android:gravity="center_horizontal|center_vertical">
+                
+                <ImageView
+                    android:layout_width="150dip"
+                    android:layout_height="150dp"
+                    android:contentDescription="@string/hello_world"
+                    android:src="@drawable/app" />
+        
+        </LinearLayout>
+        
+        <Button 
+            android:id="@+id/bt_guide_pervious"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上一步"
+            android:drawableRight="@drawable/previout"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"/>
+        
+        <Button 
+            android:id="@+id/bt_guide_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下一步"
+            android:drawableRight="@drawable/next"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"/>
+        
+    </RelativeLayout>
+        
+</LinearLayout>
